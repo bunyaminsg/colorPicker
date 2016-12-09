@@ -10,10 +10,10 @@
       <strong class="text-md-danger">R:</strong>
     </ion-col>
     <ion-col width-67>
-      <ion-range [(ngModel)]="rgb_r" color="danger" pin="true" min="0" max="255"></ion-range>
+      <ion-range [(ngModel)]="rgb_r" color="danger" pin="true" min="0" max="255" (ionChange)="onRGBChanged()"></ion-range>
     </ion-col>
     <ion-col width-20>
-      <ion-input type="number" class="text-input text-md-danger" [(ngModel)]="rgb_r"></ion-input>
+      <ion-input type="number" class="text-input text-md-danger" [(ngModel)]="rgb_r" (change)="onRGBChanged()"></ion-input>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -21,10 +21,10 @@
       <strong class="text-md-secondary">G:</strong>
     </ion-col>
     <ion-col width-67>
-      <ion-range [(ngModel)]="rgb_g" color="secondary" pin="true" min="0" max="255"></ion-range>
+      <ion-range [(ngModel)]="rgb_g" color="secondary" pin="true" min="0" max="255" (ionChange)="onRGBChanged()"></ion-range>
     </ion-col>
     <ion-col width-20>
-      <ion-input type="number" class="text-input text-md-secondary" [(ngModel)]="rgb_g"></ion-input>
+      <ion-input type="number" class="text-input text-md-secondary" [(ngModel)]="rgb_g" (change)="onRGBChanged()"></ion-input>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -32,10 +32,10 @@
       <strong class="text-md-primary">B:</strong>
     </ion-col>
     <ion-col width-67>
-      <ion-range [(ngModel)]="rgb_b" color="primary" pin="true" min="0" max="255"></ion-range>
+      <ion-range [(ngModel)]="rgb_b" color="primary" pin="true" min="0" max="255" (ionChange)="onRGBChanged()"></ion-range>
     </ion-col>
     <ion-col width-20>
-      <ion-input type="number" class="text-input text-md-primary" [(ngModel)]="rgb_b"></ion-input>
+      <ion-input type="number" class="text-input text-md-primary" [(ngModel)]="rgb_b" (change)="onRGBChanged()"></ion-input>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -43,10 +43,15 @@
       <strong>A:</strong>
     </ion-col>
     <ion-col width-67>
-      <ion-range [(ngModel)]="rgb_a" color="dark" pin="true" min="0" max="100"></ion-range>
+      <ion-range [(ngModel)]="rgb_a" color="dark" pin="true" min="0" max="100" (ionChange)="onRGBChanged()"></ion-range>
     </ion-col>
     <ion-col width-20>
-      <ion-input type="number" class="text-input" [(ngModel)]="rgb_a"></ion-input>
+      <ion-input type="number" class="text-input" [(ngModel)]="rgb_a" (change)="onRGBChanged()"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-90>
+      <ion-input type="text" class="text-input" style="font-weight: bold;" [(ngModel)]="rgba_hex" (change)="onHexChanged()"></ion-input>
     </ion-col>
   </ion-row>
   <ion-row>
