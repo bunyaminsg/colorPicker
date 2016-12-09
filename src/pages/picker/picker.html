@@ -5,13 +5,54 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-row>
+    <ion-col width-10>
+      <strong class="text-md-danger">R:</strong>
+    </ion-col>
+    <ion-col width-67>
+      <ion-range [(ngModel)]="rgb_r" color="danger" pin="true" min="0" max="255"></ion-range>
+    </ion-col>
+    <ion-col width-20>
+      <ion-input type="number" class="text-input text-md-danger" [(ngModel)]="rgb_r"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-10>
+      <strong class="text-md-secondary">G:</strong>
+    </ion-col>
+    <ion-col width-67>
+      <ion-range [(ngModel)]="rgb_g" color="secondary" pin="true" min="0" max="255"></ion-range>
+    </ion-col>
+    <ion-col width-20>
+      <ion-input type="number" class="text-input text-md-secondary" [(ngModel)]="rgb_g"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-10>
+      <strong class="text-md-primary">B:</strong>
+    </ion-col>
+    <ion-col width-67>
+      <ion-range [(ngModel)]="rgb_b" color="primary" pin="true" min="0" max="255"></ion-range>
+    </ion-col>
+    <ion-col width-20>
+      <ion-input type="number" class="text-input text-md-primary" [(ngModel)]="rgb_b"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-10>
+      <strong>A:</strong>
+    </ion-col>
+    <ion-col width-67>
+      <ion-range [(ngModel)]="rgb_a" color="dark" pin="true" min="0" max="100"></ion-range>
+    </ion-col>
+    <ion-col width-20>
+      <ion-input type="number" class="text-input" [(ngModel)]="rgb_a"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center">
+      <div [ngStyle]="expandableDivStyle" [style.background-color]="'rgba('+ rgb_r + ',' + rgb_g + ',' + rgb_b + ',' + rgb_a/100.0 + ')'" (click)="triggerExpand()">
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>
